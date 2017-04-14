@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>client - DataSlot</title>
+	<style>
+		[data-pending]{display:none}
+	</style>
+</head>
+
+<body>
+	<div data-slot="hello" data-pending>
+		<!--region:name-->kelsen<!--/region:name-->
+		<!--region:address-->Beijing<!--/region:address-->
+	</div>
+	<script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.js"></script>
+	<!-- build:js javascript.js -->
+	<script src="../src/data-slot.js"></script>
+	<!-- endbuild -->
+	<script>
+		var option = {
+			url: {
+				web: 'http://localhost:3000/datasource.html',
+				local: 'http://localhost:3000/datasource.html'
+			}
+		}
+		var slot = new DataSlot(option,null);
+	</script>
+</body>
+
+</html>
