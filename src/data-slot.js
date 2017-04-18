@@ -159,7 +159,7 @@
 			}else{
 				// error
 				$.each(slots, function (index, value) {
-					$(value).html("数据加载失败!")
+					$(value).html("Error:403")
 				})
 			}
 			return null;
