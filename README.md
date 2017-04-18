@@ -1,5 +1,7 @@
 # data-slot
-Load remote data to the current page
+Load component from remote html page and append it in current page.
+
+---
 
 为提高协同开发效率，降低页面维护成本，开发 data-slot 组件。
 
