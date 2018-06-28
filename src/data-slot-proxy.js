@@ -26,8 +26,7 @@ if (!Array.prototype.indexOf) {
     var core = function(){
         var env = null,
             redirectHost = '',
-            htmlText = null,
-            cssText=null;
+            htmlText = null;
 
         var query = (function () {
             var ret = {}, parts, i, p;
@@ -88,8 +87,8 @@ if (!Array.prototype.indexOf) {
 
         this.response = function(html){
             htmlText = html;
-            if(htmlText!= null && cssText != null){
-                window.name = htmlText + (cssText == '' ? '' : '___split___' + cssText);
+            if(htmlText!= null){
+                window.name = htmlText;
                 
                 setTimeout(function() {
                     window.location.href = getRedirectUrl();
@@ -98,19 +97,14 @@ if (!Array.prototype.indexOf) {
             }
         };
 
-        this.getCss = function(url){
-            cssText = ''
-        };
     }
 
     core.prototype.init =  function(){
-        if (this.getAccredit()) {            
-            this.getCss('document.head.getElementsByTagName');
+        if (this.getAccredit()) {
             this.response(document.body.innerHTML);
         } else {
-            this.getCss(false);
             this.response('403');
         }
     }
-    window.DataSlotProxy = core;    
+    window.DataSlotProxy = core;
 }(window);
